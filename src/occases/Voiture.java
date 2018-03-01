@@ -52,6 +52,9 @@ public class Voiture {
     public double getPrix() {
         return prix;
     }
+    
+    
+    
 
     public void setPrix(double nouvPrix) {
         if (vendue) {

@@ -47,17 +47,27 @@ public class GarageModele {
    }
  
   
-  public List<Voiture> getVoituresClient(Client c){
-      if(c==null)return null;
-      if(mesVoitures.isEmpty())return null;
-      ArrayList<Voiture> listev =new ArrayList<>();
-      for(Voiture v :mesVoitures){
+    public List<Voiture> getVoituresClient(Client c){
+        if(c==null)return null;
+        if(mesVoitures.isEmpty())return null;
+        ArrayList<Voiture> listev =new ArrayList<>();
+        for(Voiture v :mesVoitures){
             if(!v.estVendue())continue;
             Client ca=v.getAcheteur();
             if(ca.equals(c))listev.add(v);
-      }
-      if(listev.isEmpty())return null;
-      return listev;
-  }
+        }
+        if(listev.isEmpty())return null;
+        return listev;
+    }
+  
+    public List<Voiture> rechecheVoituresClient(Client clirech){
+        List<Voiture> listev = new ArrayList<>();
+        for(Voiture v :mesVoitures){
+            if(!v.estVendue())continue;
+            Client ca=v.getAcheteur();
+            if(ca.equals(clirech))listev.add(v);
+        }
+        return listev;
+    }
    
 }

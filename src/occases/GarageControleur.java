@@ -1,4 +1,5 @@
 package occases;
+import java.util.*;
 
 public class GarageControleur {
 
@@ -37,7 +38,10 @@ public class GarageControleur {
                 case 4:
                     changementAdresse();
                     break;
-                case 5:
+                case 5 :
+                    rechercheVoitureClient();
+                    break;
+                case 6:
                     gv.affMsg("bye");
                     break;
                 default:
@@ -104,6 +108,18 @@ public class GarageControleur {
        String numChassis=gv.formRechVoiture();
        return gm.getVoiture(numChassis);
     }
+    
+    public void rechercheVoitureClient(){
+        Client clirech = rechClient();
+        if(clirech==null){
+            gv.affMsg("client inconnu");
+            return;
+        }
+        List<Voiture> lv = gm.rechecheVoituresClient(clirech);
+        gv.affListe(lv);
+    }
+    
+    
 
    
 }

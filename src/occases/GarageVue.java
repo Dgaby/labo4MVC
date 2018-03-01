@@ -22,6 +22,7 @@ public class GarageVue {
             "ajouter client", 
             "vendre véhicule", 
             "changement d'adresse", 
+            "recherche voiture client",
             "fin"));
        affListe(listeItems);
        
